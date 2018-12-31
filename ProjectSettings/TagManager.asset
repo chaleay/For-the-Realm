@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Cactus
+  - Static
   layers:
   - Default
   - TransparentFX
@@ -13,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Defender
+  - Enemy
+  - Projectile
   - 
   - 
   - 
@@ -40,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 4132036309
+    locked: 0
+  - name: Foreground Icons
+    uniqueID: 4194688915
+    locked: 0
+  - name: Text
+    uniqueID: 1721458029
     locked: 0

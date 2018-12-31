@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
-    
+    [SerializeField] AudioClip onQuitSFX;
+    [SerializeField] float volume = 1f;
     void Start()
     {
         if(SceneManager.GetActiveScene().buildIndex == 0)
@@ -19,5 +20,16 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene("Start Screen");
     }
 
- 
+    public void OnExit()
+    {
+        FadeOutMusic();
+        AudioSource.PlayClipAtPoint(onQuitSFX, Camera.main.transform.position, volume);
+        Application.Quit();
+        
+    }
+
+    public void FadeOutMusic()
+    {
+
+    }
 }
