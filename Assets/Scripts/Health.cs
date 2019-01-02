@@ -39,14 +39,19 @@ public class Health : MonoBehaviour
 
     private void TriggerDamageVFX()
     {
-        GameObject vfx = Instantiate(DamageVFX, transform.position, Quaternion.identity);
+        GameObject vfx = Instantiate(DamageVFX, GetComponent<Transform>().position, Quaternion.identity);
         vfx.transform.position = new Vector2(transform.position.x - .5f, transform.position.y -.5f);
         Destroy(vfx, .5f);
     }
     private void TriggerDeathVFX()
     {
-        GameObject vfx = Instantiate(DeathVFX, transform.position, Quaternion.identity);
+        GameObject vfx = Instantiate(DeathVFX, GetComponent<Transform>().position, Quaternion.identity);
         vfx.transform.position = new Vector2(transform.position.x - .5f, transform.position.y -.5f);
         Destroy(vfx, 1f);
+    }
+
+    public void setMaxHealth(int maxHealth)
+    {
+        this.maxHealth = maxHealth;
     }
 }

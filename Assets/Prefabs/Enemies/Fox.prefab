@@ -80,10 +80,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1cde99a5e67374789817d19fffcfd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1.7
+  baseMovementSpeed: 1.1
   offset: 2
   canJump: 1
-  damage: 1
 --- !u!114 &6943241170204700098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,13 +95,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3438e8e812bba784eb07fd93ac10cb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 2
   currentHealth: 0
   DeathVFX: {fileID: 8207770067093052132, guid: 3f37e4dbcb8857d4da2c002d0263d9d6,
     type: 3}
   DamageVFX: {fileID: 8207770067093052132, guid: 689aaeadc22f9d9458a6280d9031d1b6,
     type: 3}
-  starsAwardedOnKill: 0
+  starsAwardedOnKill: 3
 --- !u!50 &4755840238659221434
 Rigidbody2D:
   serializedVersion: 4
@@ -137,7 +136,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10308963, y: 0.021891952}
+  m_Offset: {x: -0.20664, y: 0.021891952}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +147,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96366274, y: 0.65791154}
+  m_Size: {x: 1.1707635, y: 0.65791154}
   m_EdgeRadius: 0
 --- !u!1 &7177632583886408829
 GameObject:

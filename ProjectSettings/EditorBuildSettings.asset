@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start Screen.unity
     guid: ef7dc268623779146a7a49c4d0cd68a3
+  - enabled: 1
+    path: Assets/Scenes/GameForestLevel.unity
+    guid: 82585eea31b0bae4b99cbc0ed7e94f89
+  - enabled: 1
+    path: Assets/Scenes/GameForestLevelGameOver.unity
+    guid: 8bf91f45f39a2a645a7f7911120b5f52
   m_configObjects: {}

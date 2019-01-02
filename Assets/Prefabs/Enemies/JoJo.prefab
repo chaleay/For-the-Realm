@@ -128,10 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1cde99a5e67374789817d19fffcfd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  baseMovementSpeed: 0.75
   offset: 2
   canJump: 0
-  damage: 3
 --- !u!114 &1231123803762266898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3438e8e812bba784eb07fd93ac10cb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 5
   currentHealth: 0
   DeathVFX: {fileID: 8207770067093052132, guid: 3f37e4dbcb8857d4da2c002d0263d9d6,
     type: 3}

@@ -292,15 +292,15 @@ RectTransform:
   m_GameObject: {fileID: 528976834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.43032, y: 0.43032, z: 0.43032}
   m_Children: []
   m_Father: {fileID: 1794408776}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 528, y: -606.9}
+  m_AnchoredPosition: {x: 0.000022888, y: 137}
+  m_SizeDelta: {x: 1810.6, y: -122.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528976836
 MonoBehaviour:
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.57434434, g: 0.754717, b: 0.41651833, a: 1}
+  m_Color: {r: 0.16107391, g: 0.3301887, b: 0.0140174385, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -324,18 +324,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 112779e616fcd4d4b91c73d1419ec8ce, type: 3}
-    m_FontSize: 80
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 8
-    m_MaxSize: 80
+    m_MinSize: 2
+    m_MaxSize: 200
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Glitch Garden
+  m_Text: Defend the Realm
 --- !u!222 &528976837
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -561,16 +561,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
-    - target: {fileID: 4318473204007711772, guid: c753bc0401c319740bd9494420ac1086,
-        type: 3}
-      propertyPath: onQuitSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 52526770fd4f1b3449f5acc46486fb40, type: 3}
-    - target: {fileID: 4318473204007711772, guid: c753bc0401c319740bd9494420ac1086,
-        type: 3}
-      propertyPath: volume
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 4318473204007711773, guid: c753bc0401c319740bd9494420ac1086,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -579,7 +569,7 @@ PrefabInstance:
     - target: {fileID: 4318473204007711773, guid: c753bc0401c319740bd9494420ac1086,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 20.8
       objectReference: {fileID: 0}
     - target: {fileID: 4318473204007711773, guid: c753bc0401c319740bd9494420ac1086,
         type: 3}
@@ -626,6 +616,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4318473204007711772, guid: c753bc0401c319740bd9494420ac1086,
+        type: 3}
+      propertyPath: onQuitSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 52526770fd4f1b3449f5acc46486fb40, type: 3}
+    - target: {fileID: 4318473204007711772, guid: c753bc0401c319740bd9494420ac1086,
+        type: 3}
+      propertyPath: volume
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c753bc0401c319740bd9494420ac1086, type: 3}
 --- !u!1 &1483116933
@@ -656,7 +656,7 @@ RectTransform:
   m_GameObject: {fileID: 1483116933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.6969, y: 2.6969, z: 2.6969}
   m_Children:
   - {fileID: 371219633}
   m_Father: {fileID: 1794408776}
@@ -706,7 +706,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1483116936}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 765877137}
+        m_MethodName: StartNewGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1483116936
@@ -1037,7 +1048,7 @@ RectTransform:
   m_GameObject: {fileID: 2005086776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.7478, y: 2.7478, z: 2.7478}
   m_Children:
   - {fileID: 1878159202}
   m_Father: {fileID: 1794408776}
@@ -1045,7 +1056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -143}
+  m_AnchoredPosition: {x: 0, y: -233}
   m_SizeDelta: {x: 160, y: 33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005086778

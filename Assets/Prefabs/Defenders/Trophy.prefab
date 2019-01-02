@@ -206,10 +206,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3438e8e812bba784eb07fd93ac10cb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 1
   currentHealth: 0
-  DeathVFX: {fileID: 0}
-  DamageVFX: {fileID: 0}
+  DeathVFX: {fileID: 8207770067093052132, guid: 8118561321170bc4480e0bde8060c9b1,
+    type: 3}
+  DamageVFX: {fileID: 8207770067093052132, guid: c9f171e92a1447b408f1c241b1270678,
+    type: 3}
   starsAwardedOnKill: 0
 --- !u!114 &1592308713867933029
 MonoBehaviour:
@@ -223,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ef4258c70c1a5478f44fe9bb9d2a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 0
 --- !u!114 &8741431046203460350
 MonoBehaviour:
   m_ObjectHideFlags: 0

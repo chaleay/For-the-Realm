@@ -4,25 +4,51 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
-    [Range(0f,5f)] [SerializeField] float movementSpeed = 2f;
+    
+    [Header("Movement Speed")]
+    [Range(0f,5f)] [SerializeField] float baseMovementSpeed = 1f;
+    public float maxMovementSpeedAtThisPoint {get; set;}
+    public float currentMovementSpeed {get; set;}
     [SerializeField] float offset = 0;
     [SerializeField] bool canJump = true;
-    [SerializeField] int damage;
     GameObject currentTarget;
+    Animator animator;
+    public Attacker attackerInFront {get; set;}
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        currentMovementSpeed = maxMovementSpeedAtThisPoint = baseMovementSpeed;
+    }
     
     void Update()
     {
-        transform.Translate(Vector2.left * Time.deltaTime *movementSpeed);
+        
+        //move this attacker every frame
+        transform.Translate(Vector2.left * Time.deltaTime * currentMovementSpeed);
+
+        if(animator.GetBool("isIdle"))
+        {
+            currentMovementSpeed = 0;
+        }
+        
+        //if this attacker was attacking  its target but its target is now dead, proceed to move
+        if(animator.GetBool("isAttacking") && !currentTarget)
+        {
+            animator.SetBool("isAttacking", false);
+        }
+        
+        //attacker in front is destroyed, in which case this attacker must move forward
+        if(!attackerInFront && animator.GetBool("isIdle"))
+        {
+            animator.SetBool("isIdle", false);
+        }
+            
     }
 
     public void SetMovementSpeed(float movementSpeed)
     {
-        this.movementSpeed = movementSpeed;
-    }
-
-    public void Die()
-    {
-        
+       maxMovementSpeedAtThisPoint = movementSpeed;
     }
 
     public float getOffset()
@@ -32,8 +58,54 @@ public class Attacker : MonoBehaviour
 
     public void Attack(GameObject target)
     {
-        currentTarget = target;
-        GetComponent<Animator>().SetBool("isAttacking", true);
+       currentTarget = target;
+       animator.SetBool("isAttacking", true);
     }
 
+    public bool hasTarget()
+    {
+        return currentTarget;
+    }
+
+    public void WaitForAttackerToFinish()
+    {
+        animator.SetBool("isIdle", true);
+    }
+
+    public void StrikeTarget(int damage)
+    {
+        if(!currentTarget)
+            return;
+        Health health = currentTarget.GetComponent<Health>();
+        if(health)
+            health.DealDamage(damage);
+    }
+
+    public bool isIdling()
+    {
+        return animator.GetBool("isIdle");
+    }
+
+    public GameObject getCurrentTarget()
+    {
+        return currentTarget;
+    }
+
+    
+    public void Stop()
+    {
+        currentMovementSpeed = 0f;
+    }
+
+    public void Move()
+    {
+        
+        currentMovementSpeed = maxMovementSpeedAtThisPoint;
+    }
+
+    public float GetBaseMovementSpeed()
+    {
+        return baseMovementSpeed;
+    }
+   
 }

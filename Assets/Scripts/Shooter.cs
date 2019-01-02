@@ -31,7 +31,7 @@ public class Shooter : MonoBehaviour
          if((Mathf.Abs(spawner.transform.position.y - transform.position.y)) <= Mathf.Epsilon) //mathf.epsilon is the smallest positive infinitesimal
          {
             thisLaneSpawner = spawner;
-            Debug.Log("name of spawner: " + thisLaneSpawner.name);
+            //Debug.Log("name of spawner: " + thisLaneSpawner.name);
          }
        }
      

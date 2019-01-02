@@ -148,21 +148,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: SetMovementSpeed
+    functionName: Stop
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.125
-    functionName: SetMovementSpeed
+    functionName: Jump
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 1
     intParameter: 0
     messageOptions: 0
   - time: 0.625
-    functionName: SetMovementSpeed
+    functionName: Stop
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

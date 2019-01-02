@@ -103,7 +103,7 @@ public class DefenderSpawner : MonoBehaviour
            
     }
 
-    /**
+    
     public bool SquareisOccupied(Vector2 posToCheck)
     {
          foreach(Defender defender in defendersOnBoard)
@@ -118,7 +118,7 @@ public class DefenderSpawner : MonoBehaviour
         }
         return false;
     }
-    */
+    
     public void setCurrentDefender(Defender defender)
     {
         currentDefenderSelection = defender;

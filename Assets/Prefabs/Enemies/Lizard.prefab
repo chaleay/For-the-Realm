@@ -128,10 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1cde99a5e67374789817d19fffcfd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  offset: 0
+  baseMovementSpeed: 1
+  offset: 2
   canJump: 1
-  damage: 2
 --- !u!114 &1231123803762266898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3438e8e812bba784eb07fd93ac10cb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 3
   currentHealth: 0
   DeathVFX: {fileID: 8207770067093052132, guid: 3f37e4dbcb8857d4da2c002d0263d9d6,
     type: 3}
@@ -173,7 +172,7 @@ Animator:
   m_GameObject: {fileID: 1865142016139445020}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f53d70ebafe178d4295262534e19c6b8, type: 2}
+  m_Controller: {fileID: 9100000, guid: d3788137961d7ef4d8b4e7861bce0627, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
