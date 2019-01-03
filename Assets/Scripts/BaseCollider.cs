@@ -31,21 +31,11 @@ public class BaseCollider : MonoBehaviour
    {
        GetComponent<Collider2D>().enabled = false;
        animator.SetBool("isDead", true);
-       turnOffSpawners();
+       FindObjectOfType<LevelController>().turnOffSpawners();
        StartCoroutine(FindObjectOfType<LevelLoader>().FadeOutAndLoadScene());
-      
-
    }
 
-   public void turnOffSpawners()
-    {
-        AttackerSpawner [] spawners = FindObjectsOfType<AttackerSpawner>();
-       //Debug.Log(defenderThisShooterBelongsTo == null); //used to debug weird issue with execution order -- awake and start
-       foreach(AttackerSpawner spawner in spawners)
-       {
-            spawner.spawn = false;
-       }
-    }
+   
 
     public void DestroyCastle()
     {

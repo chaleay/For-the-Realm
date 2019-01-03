@@ -5,24 +5,24 @@ using UnityEngine;
 public class AttackerSpawner : MonoBehaviour
 {
     
-    public bool spawn {get;set;} = true;
+    public bool spawn {get;set;} = false;
     [SerializeField] List<Attacker> enemiesToSpawn;
     [SerializeField] float minTimeBeforeSpawn = 2f;
     [SerializeField] float maxtimeBeforeSpawn = 6f;
     float timeBeforeSpawn;
     private float update; 
+    Coroutine spawnCycle;
 
-    IEnumerator Start()
+
+    public IEnumerator SpawnCycle()
     {
-     
-        while(spawn)
+         while(spawn)
         {
             timeBeforeSpawn = Random.Range(minTimeBeforeSpawn, maxtimeBeforeSpawn);
             yield return new WaitForSeconds(timeBeforeSpawn);
             SpawnAttacker();
         }
     }
-
     public void SpawnAttacker()
     {
         
