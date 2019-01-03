@@ -8,7 +8,11 @@ public class GameTimer : MonoBehaviour
     Text text;
     [SerializeField] float LevelTime;
     // Update is called once per frame
+    [Range(0,1f)] [SerializeField] float volume = 1f;
+    [SerializeField] AudioClip timeDoneFX;
+    [SerializeField] AudioClip pepFX;
 
+    private bool playedOnce = false;
     void Start()
     {
         text = GetComponent<Text>();
@@ -17,14 +21,23 @@ public class GameTimer : MonoBehaviour
     {
        if(LevelTime >= 0)
        {
-       LevelTime -= Time.deltaTime;
-       text.text = ConvertSecondsToMinuteAndSeconds(LevelTime);
+            LevelTime -= Time.deltaTime;
+            text.text = ConvertSecondsToMinuteAndSeconds(LevelTime);
+            if(LevelTime < 15f && !playedOnce)
+            {
+                playedOnce = true;
+
+            }
        }
        else
        {
            text.text = "0";
-           FindObjectOfType<LevelController>().levelTimerDone = true;
+           //AudioSource.PlayClipAtPoint(TimeDoneFX, Camera.main.transform.position, 1.0f);
+           LevelController levelController = FindObjectOfType<LevelController>();
+           levelController.levelTimerDone = true;
+           levelController.turnOffSpawners();
        }
+
        
     }
 
@@ -32,7 +45,9 @@ public class GameTimer : MonoBehaviour
     {
         int minute = Mathf.FloorToInt(timeToConvert/60);
         int seconds = Mathf.FloorToInt(timeToConvert%60);
-        return minute + ":" + seconds;
+        string convertedTime = (minute == 0) ? ("0" + minute + ":" + seconds): ("0" + minute + ":" + seconds);
+        return convertedTime;
+            
     }
 
 }

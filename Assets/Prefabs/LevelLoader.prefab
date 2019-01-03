@@ -221,6 +221,7 @@ MonoBehaviour:
   gameOverScene: 3
   onQuitSFX: {fileID: 0}
   volume: 1
+  timeToWait: 4
 --- !u!95 &4318473204007711774
 Animator:
   serializedVersion: 3
