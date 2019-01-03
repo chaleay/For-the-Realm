@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
-    int numAttackers;
-    bool timeDone;
+    public int numAttackers {get;set;} = 0;
+    public bool levelTimerDone {get;set;} = false;
     
+    
+    void Update()
+    {
+        if(numAttackers == 0 && levelTimerDone)
+        {
+            LevelIsFinished();
+        }
+    }
     //called by Game Begin animation controller
-    
-    
-    
-    
-    
+
     //THIS SECTION - ENABLE OR DISABLE SPAWNERS - spawners start off by default
     public void EnableSpawners()
     {
@@ -32,5 +36,10 @@ public class LevelController : MonoBehaviour
        {
             spawner.spawn = false;
        }
+    }
+
+    private void LevelIsFinished()
+    {
+
     }
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/GameForestLevel.unity
+- path: Assets/Scenes/GameForestLevelGameOver.unity
   isLoaded: 1
   isActive: 1

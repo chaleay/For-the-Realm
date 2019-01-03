@@ -10,7 +10,6 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] AudioClip onQuitSFX;
     [SerializeField] float volume = 1f;
 
-
     void Start()
     {
         
@@ -18,13 +17,6 @@ public class LevelLoader : MonoBehaviour
         {
             StartCoroutine(LoadMainMenu());
         }
-    }
-
-    public IEnumerator LoadMainMenu()
-    {
-        yield return new WaitForSeconds(3f);
-        GetComponent<Animator>().SetTrigger("FadeOut");
-        Destroy(gameObject, 3f);
     }
 
     public void StartNewGame()
@@ -48,10 +40,30 @@ public class LevelLoader : MonoBehaviour
         GetComponent<Animator>().SetTrigger("FadeOut");
     }
 
+    public IEnumerator LoadMainMenu()
+    {
+        yield return new WaitForSeconds(1f);
+        GetComponent<Animator>().SetTrigger("FadeOutManual");
+    }
+
+    public void LoadMainMenuScene()
+    {
+         SceneManager.LoadScene(1); //1 corresponds to the mainMenu scene
+    }
     public void LoadNextScene()
     {
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void LoadPrevScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
     
+    public void MainMenuButton()
+    {
+         GetComponent<Animator>().SetTrigger("FadeOutManual");
+    }
+
 }

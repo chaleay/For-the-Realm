@@ -15,6 +15,17 @@ public class Attacker : MonoBehaviour
     Animator animator;
     public Attacker attackerInFront {get; set;}
 
+    void Awake()
+    {
+        FindObjectOfType<LevelController>().numAttackers++;
+        Debug.Log(FindObjectOfType<LevelController>().numAttackers);
+    }
+
+    void OnDestroy()
+    {
+        FindObjectOfType<LevelController>().numAttackers--;
+    }
+
     void Start()
     {
         animator = GetComponent<Animator>();
