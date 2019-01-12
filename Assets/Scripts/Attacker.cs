@@ -23,7 +23,9 @@ public class Attacker : MonoBehaviour
 
     void OnDestroy()
     {
-        FindObjectOfType<LevelController>().numAttackers--;
+        LevelController levelController = FindObjectOfType<LevelController>();
+        if(levelController != null)
+            levelController.numAttackers--;
     }
 
     void Start()
